@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./Styles/login.css">
+</head>
+<body>
+
+    <div id="login-form">
+        <form >
+            <h1>Login</h1>
+            <input type="email" id="email" placeholder="Enter email">
+            <input type="password" id="password" placeholder="Enter password">
+            <button id="login-btn">Login</button>
+            <p>New user <a href="signup.html">Register</a></p>
+        </form>
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    
+let userObjArr =JSON.parse(localStorage.getItem("user")) || [];
+
+document.getElementById("login-btn").addEventListener("click",chkUser);
+
+function chkUser(){
+
+    event.preventDefault();
+
+    
+    let email =document.getElementById("email").value;
+    let password =document.getElementById("password").value;
+    let isValid =false;
+    let userName;
+
+    userObjArr.forEach(element => {
+        if(element.email == email && element.password ==password){
+            isValid =true;
+            userName =element.name;
+        }
+    });
+
+    if(isValid){
+
+        let loginObj ={
+            name:userName,
+            isLogin :true,
+        }
+
+        localStorage.setItem("currUser",JSON.stringify(loginObj));
+        location.href ="index.html";
+
+    }
+    else{
+        alert("Invalid! details")
+
+    }
+
+   
+
+
+}
+
+
+
+
+</script>

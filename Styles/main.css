@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+#navbar-container{
+    width: 100%;
+    background-color: black;
+}
+
+#navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    
+}
+
+#navbar a{
+    border: none;
+    outline: 1px solid white;
+    color: white;
+    font-size: 1.5rem;
+    margin: 10px;
+    padding: 10px 15px;
+    transition: all 400ms ease-in-out;
+}
+
+#navbar a:hover{
+    background-color: white;
+    color: black;
+}
+
+
+#userConatiner{
+    display: flex;
+    align-items: center;
+}
+
+#userConatiner > a{
+   padding: 5px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+
+
+#search-container{
+    /* border: 1px solid red; */
+    text-align: center;
+    
+}
+
+#search-container  input,button{
+    font-size: 1.2rem;
+    margin: 10px;
+    padding: 10px 12px;
+}
+
+#search-container button{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: 1px solid black;
+}
+
+#search-container button:hover{
+    background-color: white;
+    color: black;
+}
+
+#meal{
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+   
+    
+   
+}
+
+#meal > div{
+    display: flex;
+    column-gap: 50px;
+}
+
+#meal > div > div:last-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#meal > div > div > h3{
+   line-height: 25px;
+   color: teal;
+   margin-top: 20px;
+   font-size: 1.5rem;
+   font-weight: 500;
+   
+}
+
+#meal > div >div > h3::before{
+    content: "Steps to Follow :";
+    display: block;
+    font-size: 2rem;
+    color: crimson;
+    margin-bottom: 20px;
+    
+ }
+
+ #meal > div >div > h3::after{
+    content: "Read more";
+    text-decoration: underline;
+    color: red;
+    margin-left: 10px;
+    cursor: pointer;
+ }
+
+#meal >div > div:last-child h1::before{
+    content: "Meal : ";
+    font-size: 2rem;
+    color: red;
+    
+ }
+
+ 
+
+#meal img{
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+    width: 500px;
+    border-radius: 10px;
+   
+}
+
+.meal-container{
+    margin: 20px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    /* border: 1px solid red; */
+}

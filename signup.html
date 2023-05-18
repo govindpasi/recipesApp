@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="./Styles/login.css">
+</head>
+<body>
+
+    <div id="signup-form">
+        <form >
+            <h1>SignUp</h1>
+            <input type="text" id="name" placeholder="Enter name">
+            <input type="email" id="email" placeholder="Enter email">
+            <input type="password" id="password" placeholder="Enter password">
+            <button id="signup-btn">Signup</button>
+            <p>Already user <a href="login.html">Go to Login</a></p>
+        </form>
+    </div>
+    
+    
+</body>
+</html>
+<script>
+
+    let userObjArr =JSON.parse(localStorage.getItem("user")) || [];
+
+    document.getElementById("signup-btn").addEventListener("click",addUser);
+
+    function addUser(){
+
+        event.preventDefault();
+
+        let name =document.getElementById("name").value;
+        let email =document.getElementById("email").value;
+        let password =document.getElementById("password").value;
+
+        let obj ={name,email,password}
+
+        console.log(obj);
+
+        userObjArr.push(obj);
+
+        localStorage.setItem("user",JSON.stringify(userObjArr));
+
+        location.href ="login.html";
+
+
+    }
+
+
+
+</script>
